@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 // HE - Header
 // SB - SideBar
 // CO - Content
 // DE - Details
-
 
 export const Grid = styled.div`
 
@@ -17,4 +16,4 @@ export const Grid = styled.div`
     'SB CO DE';
 
   height: 100vh;
-`;
+`
