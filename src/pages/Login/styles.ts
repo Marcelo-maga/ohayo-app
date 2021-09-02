@@ -7,10 +7,16 @@ export const Grid = styled.div`
   display: grid;
 
   grid-template-areas: 
+    'AT HE'
     'AT LO'
-    'AT LO';
+    'AT FO';
 
-  height: 100vh;
+`
+export const Header = styled.div`
+  grid-area: HE;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `
 
 export const Login = styled.div`
@@ -22,6 +28,12 @@ export const Login = styled.div`
 
 `
 
-export const Art = styled.div`
+export const Footer = styled.div`
+  grid-area: FO;
+  display: flex;
+  flex-direction: row;
+`
+
+export const ArtArea = styled.div`
   grid-area: AT;
 `
