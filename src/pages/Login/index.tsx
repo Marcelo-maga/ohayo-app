@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
-import { Container, LoginArea, ArtArea } from './layout'
-import { FormLabel, FormControl, Input, Button } from '@chakra-ui/react'
+import { Container, LoginArea, ArtArea, Header } from './layout'
+import { FormControl, Input, Button } from '@chakra-ui/react'
 
 const LoginPage: React.FC = () => {
   const {
@@ -15,7 +16,9 @@ const LoginPage: React.FC = () => {
 
   return (
     <Container>
-
+      <Header>
+        <Button><Link to={'/register'}>Não tem uma conta? clique aqui!</Link></Button>
+      </Header>
       <LoginArea>
 
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -23,11 +26,8 @@ const LoginPage: React.FC = () => {
 
             <h1>Welcome Back</h1>
 
-            <FormLabel htmlFor="email">Email: </FormLabel>
             <Input type='text' placeholder="Informe seu email: " size="md" />
-
-            <FormLabel htmlFor="pass">Senha: </FormLabel>
-            <Input type='password' placeholder="Informe sua senha:  " size="md" />
+            <Input type='password' placeholder="Informe sua senha: " size="md" />
 
           </FormControl>
           <Button type='submit' isLoading={isSubmitting} >
