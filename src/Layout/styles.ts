@@ -6,7 +6,7 @@ import styled from 'styled-components'
 // DE - Details
 
 export const Grid = styled.div`
-
+  display: grid;
   grid-template-areas: 
     'SB CO'
     'SB CO'

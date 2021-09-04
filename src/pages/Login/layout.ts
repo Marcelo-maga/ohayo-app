@@ -19,8 +19,14 @@ export const Container = styled.div`
 export const Header = styled.div`
   grid-area: HE;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
+
+  Button{
+    font-size: 15px;
+    background-color: white;
+    margin: 5px 5px 5px 5px;
+  }
 `
 
 export const LoginArea = styled.div`
@@ -31,12 +37,13 @@ export const LoginArea = styled.div`
 
   h1{
     font-size: 46px;
+    margin-bottom: 20px;
   }
-
+  
   form{
     Input{
-
-      margin: 0 0 5px 0;
+      margin: 0 0 15px 0;
+      height: 45px;
     }
     Button{
       width: 30%;
