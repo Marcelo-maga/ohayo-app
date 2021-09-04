@@ -17,7 +17,6 @@ const LoginPage: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Button><Link to={'/register'}>Não tem uma conta? clique aqui!</Link></Button>
       </Header>
       <LoginArea>
 
@@ -32,6 +31,11 @@ const LoginPage: React.FC = () => {
           </FormControl>
           <Button type='submit' isLoading={isSubmitting} >
             Login
+          </Button>
+          <Button>
+            <Link to={'/register'}>
+            Cadastre-se
+            </Link>
           </Button>
         </form>
 

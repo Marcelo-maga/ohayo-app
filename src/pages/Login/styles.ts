@@ -8,12 +8,14 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: grid;
 
+  grid-template-columns: 40% 60%;
+
   grid-template-areas: 
     'AT HE'
     'AT LA'
     'AT FO';
 
-  height: 100%;
+  height: 100vh;
 `
 
 export const Header = styled.div`
@@ -37,7 +39,7 @@ export const LoginArea = styled.div`
 
   h1{
     font-size: 46px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
   form{
@@ -46,6 +48,7 @@ export const LoginArea = styled.div`
       height: 45px;
     }
     Button{
+      margin-right: 10px;
       width: 30%;
     }
   }
