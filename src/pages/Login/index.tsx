@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 
-import { Container, LoginArea, ArtArea, Header } from './layout'
+import { Container, LoginArea, ArtArea, Header } from './styles'
 import { FormControl, Input, Button } from '@chakra-ui/react'
 
 const LoginPage: React.FC = () => {
