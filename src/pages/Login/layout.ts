@@ -56,6 +56,5 @@ export const ArtArea = styled.div`
   grid-area: AT;
   display: flex;
 
-  flex-direction: column;
   background-color: black;
 `
