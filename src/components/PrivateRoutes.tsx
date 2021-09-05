@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-import isAuthtenticate from '../api/auth'
+import isAuthtenticate from '../services/auth'
 
 interface Props {
   path: string;
