@@ -7,13 +7,14 @@ let mainWindow
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    minWidth: 1050,
+    minHeight: 600,
+    icon: './src/public/favicon.png',
     webPreferences: {
       nodeIntegration: true
     }
   })
-
+  mainWindow.setMenu(null)
   mainWindow.loadURL(
     isDev ? 'http://localhost:3000' : `file://${path.resolve(__dirname, '..', 'build', 'index.html')}`
   )
