@@ -4,11 +4,12 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  // MenuItem,
+  MenuItem,
   IconButton
 } from '@chakra-ui/react'
 
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, AddIcon, StarIcon, SettingsIcon } from '@chakra-ui/icons'
+
 import { Container } from './styles'
 
 const Sidebar: React.FC = () => {
@@ -24,6 +25,15 @@ const Sidebar: React.FC = () => {
         />
         <MenuList>
 
+          <MenuItem icon={<AddIcon />} >
+            New Project
+          </MenuItem>
+          <MenuItem icon={<StarIcon />} >
+            Notes
+          </MenuItem>
+          <MenuItem icon={<SettingsIcon />} >
+            Settings
+          </MenuItem>
         </MenuList>
       </Menu>
     </Container>
