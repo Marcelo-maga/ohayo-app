@@ -27,7 +27,6 @@ const Sidebar: React.FC = () => {
           icon={<HamburgerIcon />}
         />
         <MenuList>
-
           <MenuItem icon={<AddIcon />} >
             New Project
           </MenuItem>
