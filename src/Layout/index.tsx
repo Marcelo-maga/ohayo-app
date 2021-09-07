@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar'
 const Layout: React.FC = () => {
   return (
     <Grid>
-      <Sidebar>asdada</Sidebar>
+      <Sidebar />
     </Grid>
   )
 }
