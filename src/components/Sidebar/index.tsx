@@ -5,14 +5,17 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  IconButton
+  IconButton,
+  useColorMode
 } from '@chakra-ui/react'
 
-import { HamburgerIcon, AddIcon, StarIcon, SettingsIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, AddIcon, StarIcon, SettingsIcon, MoonIcon, EditIcon } from '@chakra-ui/icons'
 
 import { Container } from './styles'
 
 const Sidebar: React.FC = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Container>
       <Menu>
@@ -28,11 +31,14 @@ const Sidebar: React.FC = () => {
           <MenuItem icon={<AddIcon />} >
             New Project
           </MenuItem>
-          <MenuItem icon={<StarIcon />} >
+          <MenuItem icon={<EditIcon />} >
             Notes
           </MenuItem>
           <MenuItem icon={<SettingsIcon />} >
             Settings
+          </MenuItem>
+          <MenuItem icon={colorMode === 'dark' ? <StarIcon /> : <MoonIcon />} onClick={toggleColorMode} >
+            Toggle {colorMode === 'dark' ? 'Light' : 'Dark'}
           </MenuItem>
         </MenuList>
       </Menu>
