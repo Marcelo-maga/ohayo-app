@@ -4,11 +4,12 @@ import styled from 'styled-components'
 // SB - SideBar
 // CO - Content
 // DE - Details
+// FO - Footer
 
 export const Grid = styled.div`
   display: grid;
   grid-template-areas: 
-    'SB CO'
-    'SB CO'
-    'SB CO';
+    'SB HE'
+    'CO CO'
+    'CO CO';
 `
