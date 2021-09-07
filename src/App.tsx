@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from './Layout'
 
 import GlobalStyles from './styles/GlobalStyles'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -10,8 +9,6 @@ function App () {
   return (
     <ChakraProvider>
       <Routes />
-
-      <Layout />
       <GlobalStyles />
     </ChakraProvider>
   )

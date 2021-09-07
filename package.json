@@ -30,7 +30,9 @@
   "scripts": {
     "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron main.ts\"",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "electron-build": "electron-builder",
+    "react-build": "react-scripts build",
+    "build": "yarn react-build && yarn electron-build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -59,6 +61,7 @@
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "electron": "^14.0.0",
+    "electron-builder": "^22.11.7",
     "electron-is-dev": "^2.0.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
