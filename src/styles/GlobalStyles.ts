@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     outline: 0;
 
-    font-family: 'Recursive', sans-serif; // Odiei essa fonte trocar amanha
+    font-family: 'Raleway', sans-serif;
   }
 
   li {
