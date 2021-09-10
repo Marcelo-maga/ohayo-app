@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import LoginPage from './pages/Login'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
 
 import PrivateRoute from './components/PrivateRoutes'
-import RegisterPage from './pages/Register'
 import AppPage from './pages/App'
 
 const Routes = () => {
