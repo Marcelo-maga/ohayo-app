@@ -15,7 +15,7 @@ const RegisterPage: React.FC = () => {
   interface IFormInput {
     email: string,
     password: string,
-    passConf: string
+    passwordConfirm: string
   }
 
   const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<IFormInput>({
@@ -37,15 +37,15 @@ const RegisterPage: React.FC = () => {
           <Input type='email' {...register('email')} placeholder='Seu email: ' size='md' name='email'/>
           <p>{errors.email?.message}</p>
 
-          <Input type='password' {...register('password')} placeholder='Sua senha: ' size='md' name='password'/>
+          <Input type='text' {...register('password')} placeholder='Sua senha: ' size='md' name='password'/>
           <p>{errors.password?.message}</p>
 
-          <Input type='password' placeholder='Sua senha novamente: ' size='md' name='passConf'/>
-          <p>{errors.passConf?.message}</p>
+          <Input type='text' placeholder='Sua senha novamente: ' size='md' name='passwordConfirm'/>
+          <p>{errors.passwordConfirm?.message}</p>
 
-          <Button type='submit' isLoading={isSubmitting}>Cadastrar</Button>
-          <Link to='/login'>Já possui uma conta?</Link>
+          <Button type='submit' isLoading={isSubmitting}>Sing up</Button>
         </form>
+          <Link to='/login'>Já possui uma conta?</Link>
       </Box>
       </RegisterArea>
     </Layout>
