@@ -1,5 +1,5 @@
 // import api from './api'
 
-const isAuthtenticate = () => false
+const isAuthtenticate = () => true
 
 export default isAuthtenticate
