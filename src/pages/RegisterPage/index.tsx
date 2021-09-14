@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-import api from '../../services/api'
+import api from '../../services/api'""
 import schema from './validation'
 
 const RegisterPage: React.FC = () => {
@@ -40,7 +40,7 @@ const RegisterPage: React.FC = () => {
           <Input type='text' {...register('password')} placeholder='Sua senha: ' size='md' name='password'/>
           <p>{errors.password?.message}</p>
 
-          <Input type='text' placeholder='Sua senha novamente: ' size='md' name='passwordConfirm'/>
+          <Input type='text' {...register('passwordConfirm')} placeholder='Sua senha novamente: ' size='md' name='passwordConfirm'/>
           <p>{errors.passwordConfirm?.message}</p>
 
           <Button type='submit' isLoading={isSubmitting}>Sing up</Button>
