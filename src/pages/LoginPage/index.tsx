@@ -18,9 +18,11 @@ const LoginPage: React.FC = () => {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit: SubmitHandler<IFormInput> = async data => {
-    console.log(data)
-    api.post('/login', data)
+  const onSubmit: SubmitHandler<IFormInput> = async ({ email, password }: IFormInput) => {
+    api.post('/login', {
+      email,
+      password
+    })
   }
 
   return (
@@ -36,8 +38,8 @@ const LoginPage: React.FC = () => {
           <p>{errors.password?.message}</p>
 
           <Button type='submit' isLoading={isSubmitting}>Sing in</Button>
-          <Link to='/register'>Crie uma conta aqui!</Link>
         </form>
+          <Link to='/register'>Crie uma conta aqui!</Link>
       </LoginArea>
     </Layout>
   )
