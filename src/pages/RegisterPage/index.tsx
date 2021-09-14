@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
-import api from '../../services/api'""
+import api from '../../services/api'
 import schema from './validation'
 
 const RegisterPage: React.FC = () => {
@@ -22,9 +22,11 @@ const RegisterPage: React.FC = () => {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit: SubmitHandler<IFormInput> = async data => {
-    console.log(data)
-    api.post('/register', data)
+  const onSubmit: SubmitHandler<IFormInput> = async ({ email, password }: IFormInput) => {
+    api.post('/register', {
+      email,
+      password
+    })
   }
 
   return (

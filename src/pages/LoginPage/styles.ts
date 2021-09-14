@@ -28,6 +28,7 @@ export const LoginArea = styled.div`
     }
     Button{
       margin-right: 10px;
+      margin-bottom: 20px;
       width: 30%;
     }
     p{
