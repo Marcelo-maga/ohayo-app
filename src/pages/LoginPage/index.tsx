@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Layout, LoginArea } from './styles'
 import { Input, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
-import api from '../../services/api'
 import schema from './validation'
+import { AuthContext } from '../../Context/AuthContetext'
 
 const LoginPage: React.FC = () => {
   interface IFormInput {
@@ -14,12 +14,14 @@ const LoginPage: React.FC = () => {
     password: string
   }
 
+  const { handleSingIn } = useContext(AuthContext)
+
   const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<IFormInput>({
     resolver: yupResolver(schema)
   })
 
   const onSubmit: SubmitHandler<IFormInput> = async ({ email, password }: IFormInput) => {
-    api.post('/login', {
+    await handleSingIn({
       email,
       password
     })

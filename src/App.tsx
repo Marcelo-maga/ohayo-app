@@ -2,15 +2,18 @@ import React from 'react'
 
 import GlobalStyles from './styles/GlobalStyles'
 import { ChakraProvider } from '@chakra-ui/react'
+import { AuthProvider } from './Context/AuthContetext'
 
 import Routes from './Routes'
 
 function App () {
   return (
-    <ChakraProvider>
-      <Routes />
-      <GlobalStyles />
-    </ChakraProvider>
+    <AuthProvider>
+      <ChakraProvider>
+        <Routes />
+        <GlobalStyles />
+      </ChakraProvider>
+    </AuthProvider>
   )
 }
 
