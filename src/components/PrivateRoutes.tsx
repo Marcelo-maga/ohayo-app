@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route, Redirect } from 'react-router-dom'
-
-import isAuthtenticate from '../services/auth'
-
+import { AuthContext } from '../Context/AuthContetext'
 interface Props {
-  path: string;
-  component: any;
+  path: string
+  component: any
 }
 
 const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest }) => {
+  const { authenticated } = useContext(AuthContext)
+
+  console.log(authenticated)
   return (
     <Route {...rest}
-    render={props => isAuthtenticate()
+    render={props => authenticated
       ? (
         <Component {...props} />
         )
