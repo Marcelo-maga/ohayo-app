@@ -1,12 +1,15 @@
 // Layout do app
 import React from 'react'
 
-import { Grid } from './styles'
-import Sidebar from '../Sidebar'
+import { Grid, Content } from './styles'
+import SideBar from '../SideBar'
+import Header from '../Header'
+
 const Layout: React.FC = () => {
   return (
     <Grid>
-      <Sidebar />
+      <Header />
+      <SideBar />
     </Grid>
   )
 }

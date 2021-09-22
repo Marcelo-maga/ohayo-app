@@ -1,14 +1,24 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 20%;
   grid-area: SB;
   display: flex;
 
-  .HamButtom{
-    width: 45px;
-    border-radius: 0 0 15px 0;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  
+  height: 100vh;
+
+`
+
+export const Daddy = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 50%;
 
 `
