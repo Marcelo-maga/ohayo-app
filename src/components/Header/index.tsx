@@ -1,23 +1,14 @@
 import React from 'react'
 
+import { Input } from '@chakra-ui/react'
+import { Search2Icon } from '@chakra-ui/icons'
+
 import { Container } from './styles'
-import { Avatar } from '@chakra-ui/react'
 
-interface Types {
-
-}
-
-const Header: React.FC<Types> = () => {
+const Header: React.FC = () => {
   return (
     <Container>
-      <h1>
-        Projetos
-      </h1>
-      <Avatar
-        src="https://github.com/Marcelo-maga.png"
-        className={'Avatar'}
-        size='lg'
-      />
+      <Search2Icon /> <Input placeholder={'Search a project '} />
     </Container>
   )
 }

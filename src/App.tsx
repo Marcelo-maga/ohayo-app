@@ -2,7 +2,7 @@ import React from 'react'
 
 import GlobalStyles from './styles/GlobalStyles'
 import { ChakraProvider } from '@chakra-ui/react'
-import { AuthProvider } from './Context/AuthContetext'
+import { AuthProvider } from './Context/AuthContext'
 
 import Routes from './Routes'
 

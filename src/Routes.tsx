@@ -4,8 +4,9 @@ import PrivateRoute from './components/PrivateRoutes'
 
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import AppPage from './pages/App'
-import { AuthContext } from './Context/AuthContetext'
+import Dashboard from './pages/Dashboard'
+
+import { AuthContext } from './Context/AuthContext'
 
 const Routes = () => {
   const { authenticated } = useContext(AuthContext)
@@ -14,14 +15,14 @@ const Routes = () => {
       <Switch>
 
         <Route path="/login" component={LoginPage}>
-          {authenticated ? <Redirect to='/' /> : false}
+          {authenticated ? <Redirect to='/' /> : null}
         </Route>
 
         <Route path="/register" component={RegisterPage}>
-          {authenticated ? <Redirect to='/' /> : false}
+          {authenticated ? <Redirect to='/' /> : null}
         </Route>
 
-        <PrivateRoute path='/' component={AppPage} />
+        <PrivateRoute path='/' component={Dashboard} />
 
       </Switch>
     </BrowserRouter>

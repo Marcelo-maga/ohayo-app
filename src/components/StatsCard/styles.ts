@@ -5,13 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
 
   width: 30%;
-  height: 40%;
+  height: 80%;
 
   border-radius: 20px;
   border: 1px solid #ffff;
 
   text-align: center;
-  margin-right: 10%;
+  margin-left: 15px;
   
   h1 {
     margin-top: 20px;

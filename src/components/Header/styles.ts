@@ -1,19 +1,16 @@
 import styled from 'styled-components'
+import { theme } from '../../styles/colors'
 
 export const Container = styled.div`
   grid-area: HE;
+  
   display: flex;
   flex-direction: row;
-
-  justify-content: space-between;
-
-  .Avatar{
-    margin: 30px;
+  align-items: center;
+  padding: 10px 10px 10px 50px;
+  background-color: ${theme.colors.primary} ;
+  Input {
+    margin-left: 10px;
+    width: 35%;
   }
-  h1{
-    font-weight: 500;  
-    margin: 30px;
-    font-size: 45px;
-  }
-
 `

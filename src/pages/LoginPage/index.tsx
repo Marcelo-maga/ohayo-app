@@ -6,7 +6,7 @@ import { Input, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import schema from './validation'
-import { AuthContext } from '../../Context/AuthContetext'
+import { AuthContext } from '../../Context/AuthContext'
 
 const LoginPage: React.FC = () => {
   interface IFormInput {

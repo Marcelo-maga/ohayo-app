@@ -1,15 +1,17 @@
-// Layout do app
+// Layout da dashbord
 import React from 'react'
 
-import { Grid, Content } from './styles'
-import SideBar from '../SideBar'
+import SideBar from '../Sidebar'
 import Header from '../Header'
 
-const Layout: React.FC = () => {
+import { Grid } from './styles'
+
+const Layout: React.FC = (props) => {
   return (
     <Grid>
       <Header />
       <SideBar />
+      {props.children}
     </Grid>
   )
 }

@@ -6,6 +6,8 @@ import styled from 'styled-components'
 // DE - Details
 // FO - Footer
 
+import { theme } from '../../styles/colors'
+
 export const Grid = styled.div`
   display: grid;
 
@@ -13,11 +15,9 @@ export const Grid = styled.div`
     'SB HE HE'
     'SB CO CO'
     'SB CO CO';
-  grid-template-columns: 5%;
-  grid-template-rows: 10%;
-`
 
-export const Content = styled.div`
-  grid-area: CO;
-  background-color: tomato;
+  grid-template-columns: 13% auto;
+  grid-template-rows: 10%;
+
+  background-color: ${theme.colors.primary} ;
 `

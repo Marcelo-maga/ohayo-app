@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { AuthContext } from '../Context/AuthContetext'
+import { AuthContext } from '../Context/AuthContext'
 interface Props {
   path: string
   component: any
@@ -9,7 +9,6 @@ interface Props {
 const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest }) => {
   const { authenticated } = useContext(AuthContext)
 
-  console.log(authenticated)
   return (
     <Route {...rest}
     render={props => authenticated
