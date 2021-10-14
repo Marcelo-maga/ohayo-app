@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../../styles/colors'
 
 export const Container = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ export const Container = styled.div`
 
   text-align: center;
   margin-left: 15px;
+  background-color: ${theme.colors.terc};
   
   h1 {
     margin-top: 20px;
