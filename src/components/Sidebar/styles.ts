@@ -1,36 +1,26 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/colors'
+import { colors } from '../../styles/theme'
 
 export const Container = styled.div`
   grid-area: SB;
+  
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
 
-  justify-content: flex-start;
+  width: 5%;
 
-  font-size: 15px;
-  background-color: ${theme.colors.primary} ;
 
-`
+  justify-content: center;
+  
+  background-color: ${colors.primary};
+  
+  `
 
-export const Diver = styled.div`
-  width: 100%;
-  border-top: 2px solid #bbb;
-  margin-bottom: 10px;
-`
+export const Menu = styled.div`
 
-export const Top = styled.div`
-  h1{
-    font-weight: bolder;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 5px;
+  button {
+    width: 100%;
     margin-bottom: 5px;
+    margin-left: 15px;
   }
-`
-
-export const MenuContainer = styled.div`
-
 `

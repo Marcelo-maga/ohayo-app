@@ -6,18 +6,21 @@ import styled from 'styled-components'
 // DE - Details
 // FO - Footer
 
-import { theme } from '../../styles/colors'
+import { colors } from '../../styles/theme'
 
 export const Grid = styled.div`
   display: grid;
+  
+  width: 100%;
+  height: 100vh;
 
   grid-template-areas: 
-    'SB HE HE'
+    'HE HE HE'
     'SB CO CO'
     'SB CO CO';
 
-  grid-template-columns: 13% auto;
-  grid-template-rows: 10%;
+  grid-template-columns: 0 5%;
+  grid-template-rows: 13%;
 
-  background-color: ${theme.colors.primary} ;
+  background-color: ${colors.primary} ;
 `

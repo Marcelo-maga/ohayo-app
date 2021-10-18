@@ -1,10 +1,23 @@
-import { extendTheme, ThemeConfig } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
-const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: true
+const DefaultTheme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: '#082635'
+      }
+    }
+  }
+})
+
+const colors = {
+  primary: '#082635',
+  secondary: '#001B27',
+  tertiary: '#102D3C',
+
+  white: '#f4f4f9',
+  black: '#000000'
+
 }
 
-const theme = extendTheme({ config })
-
-export default theme
+export { DefaultTheme, colors }

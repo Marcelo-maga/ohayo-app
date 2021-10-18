@@ -1,19 +1,17 @@
 import React from 'react'
-import { Container, Container2 } from './styles'
+import { Container, DashBoardContainer } from './styles'
 
 import Layout from '../../components/Layout'
-import ProjectCard from '../../components/ProjectCard'
-import StatsCard from '../../components/StatsCard'
+import Cards from '../../components/Cards'
 
 const Dashboard: React.FC = () => {
   return (
     <Layout>
       <Container>
           <h1 className={'title'}>Dashboard</h1>
-          <Container2>
-            <StatsCard />
-            <ProjectCard />
-          </Container2>
+          <DashBoardContainer>
+            <Cards />
+          </DashBoardContainer>
       </Container>
     </Layout>
   )

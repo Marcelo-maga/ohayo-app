@@ -1,38 +1,29 @@
 import styled from 'styled-components'
-import { theme } from '../../styles/colors'
+import { colors } from '../../styles/theme'
 
 export const Container = styled.div`
   grid-area: CO;
 
-
   display: flex;
   flex-direction: column;
 
-  justify-content: space-around;
-
-  border-top-left-radius: 35px;
+  border-top-left-radius: 20px;
 
   margin-left: 55px;
-  background-color: ${theme.colors.secondaty};
+  background-color: ${colors.secondary};
   
   .title {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 
-    margin-left: 15px;
+    margin-left: 50px;
   }
 `
 
-export const Container2 = styled.div`
+export const DashBoardContainer = styled.div`
   display: flex;
   flex-direction: row;
-
-  justify-content: space-between;
-
-  width: 100%;
-  height: 100%;
-
 `
