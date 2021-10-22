@@ -1,10 +1,21 @@
 import React from 'react'
+import { createPortal } from 'react-dom'
 
-import { Container } from './styles'
+import { Container, Content } from './styles'
+interface props {
+  modalOpen: boolean
+}
 
-const Modal: React.FC = (props) => {
-  return (
-    <h1>oi</h1>
+const modalRoot = document.getElementById('modal-root') as HTMLElement
+
+const Modal: React.FC<props> = ({ modalOpen, children }) => {
+  if (!modalOpen) return null
+
+  return createPortal(
+    <Container>
+      <Content>{children}</Content>
+    </Container>,
+    modalRoot
   )
 }
 
