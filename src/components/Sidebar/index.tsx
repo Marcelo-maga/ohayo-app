@@ -3,7 +3,7 @@ import { Input, Button } from '@chakra-ui/react'
 import { AddIcon, EditIcon, BellIcon } from '@chakra-ui/icons'
 
 import { Container, Menu } from './styles'
-import Modal from '../Modal'
+import Modal from '../UiComponents/Modal'
 
 const Sidebar: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -17,6 +17,7 @@ const Sidebar: React.FC = () => {
         <Input placeholder={'Project Name: '} name={'projectName'} size='md' />
         <Input placeholder={'Descrição: '} name={'projectDesc'} size='md' />
         <Button type='submit'>Criar</Button>
+        <Button type='reset'>Cancel</Button>
       </form>
 
         <h1>Or</h1>

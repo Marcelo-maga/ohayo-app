@@ -6,7 +6,7 @@ import styled from 'styled-components'
 // DE - Details
 // FO - Footer
 
-import { colors } from '../../styles/theme'
+import { colors } from '../../../styles/theme'
 
 export const Grid = styled.div`
   display: grid;
