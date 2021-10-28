@@ -14,8 +14,8 @@ const GlobalStyles = createGlobalStyle`
   *, button, input {
     border: 0;
     outline: 0;
-
-    font-family: 'Raleway', sans-serif;
+    
+    font-family: 'Ubuntu', sans-serif;
   }
 
   li {
