@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import Dashboard from './pages/Dashboard'
 
-import { AuthContext } from './Context/AuthContext'
+import { AuthContext } from './context/AuthContext'
 
 const Routes = () => {
   const { authenticated } = useContext(AuthContext)

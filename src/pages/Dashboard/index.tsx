@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, DashBoardContainer } from './styles'
 
-import Layout from '../../components/Layout'
+import Layout from '../../components/UiComponents/Layout'
 import Cards from '../../components/Cards'
 
 const Dashboard: React.FC = () => {

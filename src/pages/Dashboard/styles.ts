@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  border-top-left-radius: 20px;
+  border-top-left-radius: 10px;
 
   margin-left: 55px;
   background-color: ${colors.secondary};
@@ -16,7 +16,7 @@ export const Container = styled.div`
     font-size: 30px;
     font-weight: bold;
 
-    margin-top: 10px;
+    margin-top: 30px;
     margin-bottom: 10px;
 
     margin-left: 50px;

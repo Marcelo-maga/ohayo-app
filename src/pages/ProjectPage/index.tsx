@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/UiComopents/Layout'
+import Layout from '../../components/UiComponents/Layout'
 
 import { Container } from './styles'
 

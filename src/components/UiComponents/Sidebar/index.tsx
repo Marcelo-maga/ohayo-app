@@ -3,26 +3,27 @@ import { Input, Button } from '@chakra-ui/react'
 import { AddIcon, EditIcon, BellIcon } from '@chakra-ui/icons'
 
 import { Container, Menu } from './styles'
-import Modal from '../UiComponents/Modal'
+import Modal from '../Modal'
 
 const Sidebar: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false)
+
+  async function createProject (event: Event) {
+    event.preventDefault()
+    console.log('Cheguei')
+  }
 
   return (
     <>
     <Modal modalOpen={modalOpen} >
       <h1>New Project</h1>
 
-      <form>
+      <form onSubmit={() => console.log('dadss')}>
         <Input placeholder={'Project Name: '} name={'projectName'} size='md' />
         <Input placeholder={'Descrição: '} name={'projectDesc'} size='md' />
-        <Button type='submit'>Criar</Button>
+        <Button onClick={() => createProject}>Criar</Button>
         <Button type='reset'>Cancel</Button>
       </form>
-
-        <h1>Or</h1>
-
-      <h1>Era pra ser uma lista</h1>
 
     </Modal>
 
