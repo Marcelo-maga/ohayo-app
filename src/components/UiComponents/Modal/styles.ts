@@ -4,7 +4,7 @@ import { colors } from '../../../styles/theme'
 export const Container = styled.div`
   display: flex;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;

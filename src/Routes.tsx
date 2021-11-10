@@ -7,6 +7,8 @@ import RegisterPage from './pages/RegisterPage'
 import Dashboard from './pages/Dashboard'
 
 import { AuthContext } from './context/AuthContext'
+import { CreateNewProject } from './components/CreateNewProject'
+import { ProjectsPage } from './pages/ProjectsPage'
 
 const Routes = () => {
   const { authenticated } = useContext(AuthContext)
@@ -23,6 +25,8 @@ const Routes = () => {
         </Route>
 
         <PrivateRoute path='/' component={Dashboard} />
+        <PrivateRoute path='/projects' component={ProjectsPage} />
+        <PrivateRoute path='/createNewProject' component={CreateNewProject} />
 
       </Switch>
     </BrowserRouter>
