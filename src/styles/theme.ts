@@ -1,23 +1,17 @@
-import { extendTheme } from '@chakra-ui/react'
-
-const DefaultTheme = extendTheme({
-  styles: {
-    global: {
-      body: {
-        bg: '#082635'
-      }
-    }
-  }
-})
-
 const colors = {
-  primary: '#082635',
-  secondary: '#001B27',
-  tertiary: '#102D3C',
+  secondary: '#171717',
 
-  white: '#f4f4f9',
+  primary: '#1D1D1D',
+  tertiary: '#3E3E3E',
+
+  purple: {
+    lightPurple: '#5E07F5',
+    darkPurple: '#45139C'
+  },
+
+  white: '#ffffff',
   black: '#000000'
 
 }
 
-export { DefaultTheme, colors }
+export { colors }
