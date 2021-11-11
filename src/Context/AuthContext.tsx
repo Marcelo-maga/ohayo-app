@@ -9,6 +9,7 @@ interface IHandleSingIn {
 interface AuthContextType {
   authenticated: boolean,
   handleSingIn: ({ email, password }: IHandleSingIn) => Promise<void>
+  handleSignOut: () => void
 }
 
 export const AuthContext = createContext({} as AuthContextType)
@@ -20,7 +21,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const token = localStorage.getItem('token')
 
     if (token) {
-      api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`
+      api.defaults.headers.Authorization = `${token}`
       setAuthenticated(true)
     }
   }, [])
@@ -36,8 +37,13 @@ export const AuthProvider: React.FC = ({ children }) => {
     setAuthenticated(true)
   }
 
+  async function handleSignOut () {
+    localStorage.removeItem('token')
+    setAuthenticated(false)
+  }
+
   return (
-    <AuthContext.Provider value={{ authenticated, handleSingIn }}>
+    <AuthContext.Provider value={{ authenticated, handleSingIn, handleSignOut }}>
       {children}
     </AuthContext.Provider>
   )
