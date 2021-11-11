@@ -5,6 +5,10 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+    h1, h2, h3, strong, p {
+      color: white;
+    }
   }
 
   html, body, #root {
