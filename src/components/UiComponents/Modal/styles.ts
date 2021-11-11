@@ -22,6 +22,8 @@ export const Content = styled.div`
 
 
   justify-content: center;
+  align-items: center;
+  
   position: absolute;
 
   border-radius: 20px;
@@ -46,13 +48,13 @@ export const Content = styled.div`
       margin-bottom: 10px;
     }
 
-    Button {
-      margin-left: 50px;
-      height: 45px;
-      width: 20%;
-    }
+  }
 
-
+  .btnClose {
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
   }
 
   background-color: ${colors.secondary};
