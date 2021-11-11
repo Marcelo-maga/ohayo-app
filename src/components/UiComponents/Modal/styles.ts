@@ -37,24 +37,25 @@ export const Content = styled.div`
     margin-bottom: 20px;
   }
 
-  form{
-    display: flex;
-    flex-direction: column;
-
-    Input {
-      margin-left: 50px;
-      height: 45px;
-      width: 50%;
-      margin-bottom: 10px;
-    }
-
-  }
-
   .btnClose {
+    display: flex;
+
     float: right;
     margin-right: 20px;
     margin-top: 10px;
     font-weight: bolder;
+    color: ${colors.purple.lightPurple};
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-style: solid;
+    border-color: ${colors.purple.lightPurple};
+    border-width: 3px;
+    border-radius: 50%;
   }
 
   background-color: ${colors.secondary};
