@@ -1,36 +1,31 @@
-import { SmallAddIcon } from '@chakra-ui/icons'
 import React, { useState } from 'react'
-import { Containar, ProjectsArea, Header } from './styles'
-import Modal from '../../components/UiComponents/Modal/index'
+
+import { SmallAddIcon } from '@chakra-ui/icons'
+import { ProjectList } from '../../components/ProjectList'
+import { Modal } from '../../components/UiComponents/Modal'
+import { Containar, Header } from './styles'
+import { CreateNewProject } from '../../components/CreateNewProject'
+import { Layout } from '../../components/UiComponents/Layout'
 
 export const ProjectsPage: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false)
-  async function createNewProject () {
-    setModalOpen(true)
-    return (
-      <Modal modalOpen={modalOpen}>
-        <h1>Oi</h1>
-      </Modal>
-    )
-  }
+  const [openModal, setModalOpen] = useState(false)
 
   return (
-    <>
-    <Modal modalOpen={modalOpen}>
-      <h1>Oi</h1>
-    </Modal>
+    <Layout>
+      <Containar>
+        <Header>
+          <h1>Projetos</h1>
+          <button onClick={() => setModalOpen(true)} className='btnAdd'>
+            <SmallAddIcon />
+          </button>
+        </Header>
 
-    <Containar>
-      <Header>
-        <h1>Projetos</h1>
-        <button className='btnAdd' onClick={createNewProject}><SmallAddIcon /></button>
-      </Header>
+        <Modal openModal={openModal} onClickClose={() => setModalOpen(false)}>
+          <CreateNewProject />
+        </Modal>
 
-      <ProjectsArea>
-
-      </ProjectsArea>
-
-    </Containar>
-    </>
+        <ProjectList />
+      </Containar>
+    </Layout>
   )
 }

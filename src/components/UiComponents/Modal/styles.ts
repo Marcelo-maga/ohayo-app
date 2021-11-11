@@ -4,7 +4,7 @@ import { colors } from '../../../styles/theme'
 export const Container = styled.div`
   display: flex;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -22,6 +22,8 @@ export const Content = styled.div`
 
 
   justify-content: center;
+  align-items: center;
+  
   position: absolute;
 
   border-radius: 20px;
@@ -35,24 +37,25 @@ export const Content = styled.div`
     margin-bottom: 20px;
   }
 
-  form{
+  .btnClose {
     display: flex;
-    flex-direction: column;
 
-    Input {
-      margin-left: 50px;
-      height: 45px;
-      width: 50%;
-      margin-bottom: 10px;
-    }
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-weight: bolder;
+    color: ${colors.purple.lightPurple};
 
-    Button {
-      margin-left: 50px;
-      height: 45px;
-      width: 20%;
-    }
+    align-items: center;
+    justify-content: center;
 
+    width: 30px;
+    height: 30px;
 
+    border-style: solid;
+    border-color: ${colors.purple.lightPurple};
+    border-width: 3px;
+    border-radius: 50%;
   }
 
   background-color: ${colors.secondary};
