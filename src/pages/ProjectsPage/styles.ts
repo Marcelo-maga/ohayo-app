@@ -32,13 +32,18 @@ export const Containar = styled.div`
     margin-top: 30px;
     margin-right: 50px;
 
-    border-width: 2px;
-    border-style: double;
+    border-width: 3px;
+    border-style: solid;
+    border-color: ${colors.purple.lightPurple};
 
     width: 40px;
     height: 40px;
 
     border-radius: 50%;
+
+    svg {
+      color: ${colors.purple.lightPurple}
+    }
   }
 
 `

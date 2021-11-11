@@ -1,19 +1,30 @@
+import React, { useState } from 'react'
+
 import { SmallAddIcon } from '@chakra-ui/icons'
-import React from 'react'
 import { ProjectList } from '../../components/ProjectList'
+import { Modal } from '../../components/UiComponents/Modal'
 import { Containar, Header } from './styles'
+import { CreateNewProject } from '../../components/CreateNewProject'
 
 export const ProjectsPage: React.FC = () => {
+  const [openModal, setModalOpen] = useState(false)
+
   return (
 
-    <Containar>
-      <Header>
-        <h1>Projetos</h1>
-        <button className='btnAdd'><SmallAddIcon /></button>
-      </Header>
+      <Containar>
+        <Header>
+          <h1>Projetos</h1>
+          <button onClick={() => setModalOpen(true)} className='btnAdd'>
+            <SmallAddIcon />
+          </button>
+        </Header>
 
-      <ProjectList />
+        <Modal openModal={openModal} onClickClose={() => setModalOpen(false)}>
+          <CreateNewProject />
+        </Modal>
 
-    </Containar>
+        <ProjectList />
+
+      </Containar>
   )
 }
