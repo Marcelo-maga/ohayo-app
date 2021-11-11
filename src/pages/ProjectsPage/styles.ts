@@ -30,7 +30,7 @@ export const Containar = styled.div`
     align-items: center;
 
     margin-top: 30px;
-    margin-right: 15px;
+    margin-right: 50px;
 
     border-width: 2px;
     border-style: double;
@@ -48,8 +48,4 @@ export const Header = styled.div`
   flex-direction: row;
 
   justify-content: space-between;
-`
-
-export const ProjectsArea = styled.div`
-
 `
