@@ -1,14 +1,19 @@
 import styled from 'styled-components'
+import { colors } from '../../styles/theme'
 
 export const Layout = styled.div`
   display: grid;
   grid-template-areas: 
-    'LO';
-
+  'LO';
+  
+  position: absolute;
   grid-template-columns: 50%;
   justify-content: center;
 
   height: 100vh;
+  width: 100%;
+
+  background-color: ${colors.primary};
 `
 
 export const RegisterArea = styled.div`
@@ -30,6 +35,10 @@ export const RegisterArea = styled.div`
     margin-right: 10px;
     margin-bottom: 20px;
     width: 30%;
+    background-color: ${colors.purple.darkPurple};
+    :hover {
+      background-color: ${colors.purple.lightPurple};
+    }
     }
     p{
       margin: 0 0 15px 0;
