@@ -15,7 +15,7 @@ export const Grid = styled.div`
   height: 100vh;
 
   grid-template-areas: 
-    'HE CO CO'
+    'SB CO CO'
     'SB CO CO'
     'SB CO CO';
 
