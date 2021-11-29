@@ -6,14 +6,17 @@ export const Container = styled.div`
 
   width: 100%;
   height: 100%;
-
 `
 
 export const Content = styled.div`
-  form{
+    form {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    label {
+      
+    }
 
     input {
       width: 70%;
@@ -25,6 +28,11 @@ export const Content = styled.div`
       padding: 10px;
 
       margin-bottom: 10px;
+    }
+
+    .checkBox {
+      width: 20px;
+      height: 20px;
     }
 
     .divColors {
@@ -70,9 +78,7 @@ export const Content = styled.div`
         color: white;
         background-color: ${colors.tertiary};
         margin-top: 10px;
-
       }
-
     }
   }
 `

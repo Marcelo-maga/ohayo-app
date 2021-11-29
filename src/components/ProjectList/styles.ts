@@ -7,7 +7,7 @@ export const Projects = styled.ul`
 
   ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     li {
       display: flex;

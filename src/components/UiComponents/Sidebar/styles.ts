@@ -8,13 +8,11 @@ export const Container = styled.div`
   flex-direction: column;
 
   width: 5%;
-
-
+  
   justify-content: center;
   
   background-color: ${colors.primary};
-  
-  `
+`
 
 export const Menu = styled.div`
 

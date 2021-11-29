@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+import { colors } from '../../styles/theme'
 
 export const Layout = styled.div`
   display: grid;
+  position: absolute;
+  
   grid-template-areas: 
     'LO';
 
@@ -9,10 +12,14 @@ export const Layout = styled.div`
   justify-content: center;
 
   height: 100vh;
+  width: 100%;
+
+  background-color: ${colors.primary};
 `
 
 export const LoginArea = styled.div`
   grid-area: LO;
+  
   align-self: center;
 
   h1{
@@ -29,6 +36,10 @@ export const LoginArea = styled.div`
     Button{
       margin-right: 10px;
       margin-bottom: 20px;
+      background-color: ${colors.purple.darkPurple};
+      :hover {
+        background-color: ${colors.purple.lightPurple};
+      }
       width: 30%;
     }
     p{

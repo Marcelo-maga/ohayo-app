@@ -18,9 +18,10 @@ const GlobalStyles = createGlobalStyle`
   *, button, input {
     border: 0;
     outline: 0;
-    
+
     font-family: 'Ubuntu', sans-serif;
   }
+
 
   li {
     list-style: none;

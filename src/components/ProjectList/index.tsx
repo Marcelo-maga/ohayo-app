@@ -1,45 +1,51 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 import api from '../../services/api'
 
 import { Projects } from './styles'
 
-interface IProject {
+interface IProjects {
   id: string,
-
   name: string,
   desc: string,
+  timeWorked: number
 }
 
 const ProjectList: React.FC = () => {
-  const [projects, setProjects] = useState<IProject[]>([])
+  const [projects, setProjects] = useState<IProjects[]>([])
 
   useEffect(() => {
     async function getAllProjects () {
-      await api.get<IProject[]>('/getAllProjects').then(response => {
+      await api.get<IProjects[]>('/getAllProjects').then(response => {
         setProjects(response.data)
       })
     }
     getAllProjects()
   }, [])
 
-  async function goToProject (projectId: string) {
-    console.log('tem que começar esse função')
-    console.log(projectId)
-  }
+  const history = useHistory()
 
   return (
     <Projects>
-      <ul>
+      {!projects
+        ? <strong>Crie seu novo projeto!</strong>
+        : <ul>
         {projects.map(project => {
           return (
-            <li key={project.id} onClick={() => goToProject(project.id)}>
+            <li key={project.id} onClick={() => history.push({
+              pathname: `${project.id}`
+            })}>
               <div />
               <p>{project.name}</p>
-              <p> Dias</p>
+              <p>{ project.timeWorked / 60 < 1
+                ? (project.timeWorked / 60 / 60).toFixed(0) + ' Horas'
+                : project.timeWorked + ' Segundos'}
+                </p>
             </li>
           )
         })}
       </ul>
+      }
     </Projects>
   )
 }

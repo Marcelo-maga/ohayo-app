@@ -1,15 +1,12 @@
 // Layout da dashbord
 import React from 'react'
 
-import SideBar from '../Sidebar'
-
 import { Grid } from './styles'
 
-const Layout: React.FC = (props) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <Grid>
-      <SideBar />
-      {props.children}
+      {children}
     </Grid>
   )
 }

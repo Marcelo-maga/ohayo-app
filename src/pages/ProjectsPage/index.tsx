@@ -5,16 +5,15 @@ import { ProjectList } from '../../components/ProjectList'
 import { Modal } from '../../components/UiComponents/Modal'
 import { Containar, Header } from './styles'
 import { CreateNewProject } from '../../components/CreateNewProject'
-import { Layout } from '../../components/UiComponents/Layout'
+// import { Layout } from '../../components/UiComponents/Layout'
 
 export const ProjectsPage: React.FC = () => {
   const [openModal, setModalOpen] = useState(false)
 
   return (
-    <Layout>
       <Containar>
         <Header>
-          <h1>Projetos</h1>
+          <h1>Dashboard</h1>
           <button onClick={() => setModalOpen(true)} className='btnAdd'>
             <SmallAddIcon />
           </button>
@@ -26,6 +25,5 @@ export const ProjectsPage: React.FC = () => {
 
         <ProjectList />
       </Containar>
-    </Layout>
   )
 }

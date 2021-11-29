@@ -7,13 +7,13 @@ export const Container = styled.div`
 
   background-color: ${colors.primary};
 
-  width: 100%;
-  height: 150px;
+  width: 40%;
+  height: 95%;
 
   border-radius: 10px;
 
   margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 10px;
 
   align-items: center;
   
