@@ -6,11 +6,10 @@ import RegisterPage from './pages/RegisterPage'
 
 import { AuthContext } from './context/AuthContext'
 
-import { Dashboard } from './pages/Dashboard'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { Sidebar } from './components/UiComponents/Sidebar'
-import { AddIcon, BellIcon, EditIcon } from '@chakra-ui/icons'
 import { ProjectPage } from './pages/ProjectPage'
+import { VscRootFolderOpened } from 'react-icons/vsc'
 const Routes = () => {
   const { authenticated } = useContext(AuthContext)
 
@@ -18,9 +17,7 @@ const Routes = () => {
     <BrowserRouter>
 
       <Sidebar>
-        <Link to="/projects"><button><AddIcon/></button></Link>
-        <button><BellIcon/></button>
-        <button><EditIcon/></button>
+        <Link to="/"><button><VscRootFolderOpened/></button></Link>
       </Sidebar>
 
       <Switch>
@@ -32,11 +29,7 @@ const Routes = () => {
           {authenticated ? <Redirect to='/' /> : null}
         </Route>
 
-        <Route exact path="/" component={Dashboard}>
-          { !authenticated ? <Redirect to="/login" /> : null }
-        </Route>
-
-        <Route path="/projects" component={ProjectsPage}>
+        <Route exact path="/" component={ProjectsPage}>
           { !authenticated ? <Redirect to="/login" /> : null }
         </Route>
 
