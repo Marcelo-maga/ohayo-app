@@ -13,7 +13,7 @@ export const ProjectsPage: React.FC = () => {
   return (
       <Containar>
         <Header>
-          <h1>Projetos</h1>
+          <h1>Dashboard</h1>
           <button onClick={() => setModalOpen(true)} className='btnAdd'>
             <SmallAddIcon />
           </button>
