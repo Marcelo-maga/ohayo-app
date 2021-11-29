@@ -15,8 +15,15 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
 
-    Input {
+    input {
       width: 70%;
+      height: 35px;
+
+      color: black;
+
+      border-radius: 10px;
+      padding: 10px;
+
       margin-bottom: 10px;
     }
 
@@ -43,6 +50,9 @@ export const Content = styled.div`
 
       .btnCreate {
         width: 100px;
+        height: 30px;
+
+        border-radius: 10px;
         
         margin-top: 10px;
         margin-right: 20px;
@@ -53,6 +63,9 @@ export const Content = styled.div`
 
       .btnCancel {
         width: 100px;
+        height: 30px;
+
+        border-radius: 10px;
         
         color: white;
         background-color: ${colors.tertiary};

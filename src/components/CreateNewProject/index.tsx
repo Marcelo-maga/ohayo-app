@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Content } from './styles'
-import { Input, Button } from '@chakra-ui/react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import api from '../../services/api'
 
@@ -10,13 +9,14 @@ interface IFormInput {
 }
 
 const CreateNewProject: React.FC = () => {
-  const { register, handleSubmit } = useForm<IFormInput>({
-  })
+  const { register, handleSubmit } = useForm<IFormInput>({})
 
   const onSubimit: SubmitHandler<IFormInput> = async ({ projectName, projectDesc }: IFormInput) => {
     await api.post('/newProject', {
       projectName,
       projectDesc
+    }).then(() => {
+      location.reload()
     })
   }
 
@@ -27,9 +27,9 @@ const CreateNewProject: React.FC = () => {
 
         <form onSubmit={handleSubmit(onSubimit)}>
 
-          <Input {...register('projectName')} placeholder={'Project Name: '} name={'projectName'} size='md' />
+          <input {...register('projectName')} placeholder={'Project Name: '} name={'projectName'} />
 
-          <Input {...register('projectDesc')} placeholder={'Descrição: '} name={'projectDesc'} size='md' />
+          <input {...register('projectDesc')} placeholder={'Descrição: '} name={'projectDesc'} />
 
           <div className={'divColors'}>
             <label>Selecione a cor do projeto</label>
@@ -37,8 +37,8 @@ const CreateNewProject: React.FC = () => {
           </div>
 
           <div className={'divBtns'}>
-            <Button className={'btnCreate'} type='submit'>Criar</Button>
-            <Button className={'btnCancel'} type='reset'>Cancel</Button>
+            <button className={'btnCreate'} type='submit'>Criar</button>
+            <button className={'btnCancel'} type='reset'>Cancel</button>
           </div>
         </form>
 
