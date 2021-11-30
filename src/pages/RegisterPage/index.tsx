@@ -2,7 +2,6 @@
 import React, { } from 'react'
 
 import { Layout, RegisterArea } from './styles'
-import { Input, Button, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -18,7 +17,7 @@ const RegisterPage: React.FC = () => {
     passwordConfirm: string
   }
 
-  const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<IFormInput>({
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
     resolver: yupResolver(schema)
   })
 
@@ -32,23 +31,21 @@ const RegisterPage: React.FC = () => {
   return (
     <Layout>
       <RegisterArea>
-      <Box>
         <h1>Cadastro</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
 
-          <Input type='email' {...register('email')} placeholder='Seu email: ' size='md' name='email'/>
+          <input type='email' {...register('email')} placeholder='Seu email: ' name='email'/>
           <p>{errors.email?.message}</p>
 
-          <Input type='text' {...register('password')} placeholder='Sua senha: ' size='md' name='password'/>
+          <input type='text' {...register('password')} placeholder='Sua senha: ' name='password'/>
           <p>{errors.password?.message}</p>
 
-          <Input type='text' {...register('passwordConfirm')} placeholder='Sua senha novamente: ' size='md' name='passwordConfirm'/>
+          <input type='text' {...register('passwordConfirm')} placeholder='Sua senha novamente: ' name='passwordConfirm'/>
           <p>{errors.passwordConfirm?.message}</p>
 
-          <Button type='submit' isLoading={isSubmitting}>Sing up</Button>
+          <button type='submit'>Sing up</button>
         </form>
           <Link to='/login'>Já possui uma conta?</Link>
-      </Box>
       </RegisterArea>
     </Layout>
   )

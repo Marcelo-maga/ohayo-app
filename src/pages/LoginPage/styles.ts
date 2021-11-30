@@ -29,18 +29,25 @@ export const LoginArea = styled.div`
   }
 
   form{
-    Input{
+    input{
       margin: 0 0 5px 0;
       height: 45px;
+      width: 80%;
+      border-radius: 10px;
+      padding-left: 5px;
+      color: black;
     }
-    Button{
+    button{
+      width: 25%;
+      height: 40px;
+
       margin-right: 10px;
       margin-bottom: 20px;
+      border-radius: 10px;
       background-color: ${colors.purple.darkPurple};
       :hover {
         background-color: ${colors.purple.lightPurple};
       }
-      width: 30%;
     }
     p{
       margin: 0 0 15px 0;

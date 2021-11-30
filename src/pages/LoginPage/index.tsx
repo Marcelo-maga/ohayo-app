@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { Layout, LoginArea } from './styles'
-import { Input, Button } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup'
 import schema from './validation'
@@ -16,7 +15,7 @@ const LoginPage: React.FC = () => {
 
   const { handleSingIn } = useContext(AuthContext)
 
-  const { register, handleSubmit, formState: { isSubmitting, errors } } = useForm<IFormInput>({
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
     resolver: yupResolver(schema)
   })
 
@@ -33,13 +32,13 @@ const LoginPage: React.FC = () => {
         <h1>Login</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
 
-          <Input type='email' {...register('email')} placeholder='Seu email: ' name='email' size='md'/>
+          <input type='email' {...register('email')} placeholder='Seu email: ' name='email' />
           <p>{errors.email?.message}</p>
 
-          <Input type='password' {...register('password')} placeholder='Sua senha: 'name='password' size='md'/>
+          <input type='password' {...register('password')} placeholder='Sua senha: 'name='password'/>
           <p>{errors.password?.message}</p>
 
-          <Button type='submit' isLoading={isSubmitting}>Sing in</Button>
+          <button type='submit'>Sing in</button>
         </form>
           <Link to='/register'>Crie uma conta aqui!</Link>
       </LoginArea>

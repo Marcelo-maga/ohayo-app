@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { VscCheck, VscChromeClose } from 'react-icons/vsc'
 import { useHistory } from 'react-router'
 import api from '../../services/api'
 
@@ -8,7 +9,8 @@ interface IProjects {
   id: string,
   name: string,
   desc: string,
-  timeWorked: number
+  timeWorked: number,
+  complete: boolean
 }
 
 const ProjectList: React.FC = () => {
@@ -35,12 +37,11 @@ const ProjectList: React.FC = () => {
             <li key={project.id} onClick={() => history.push({
               pathname: `${project.id}`
             })}>
-              <div />
               <p>{project.name}</p>
-              <p>{ project.timeWorked / 60 < 1
-                ? (project.timeWorked / 60 / 60).toFixed(0) + ' Horas'
-                : project.timeWorked + ' Segundos'}
-                </p>
+              <p>
+                {(project.timeWorked / 60).toFixed(0) + ' Horas'}
+              </p>
+                {!project.complete ? <VscChromeClose/> : <VscCheck/>}
             </li>
           )
         })}
