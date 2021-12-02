@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
+
 import api from '../services/api'
 
 interface IHandleSingIn {
@@ -18,23 +19,30 @@ export const AuthProvider: React.FC = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    try {
+      const token = localStorage.getItem('token')
 
-    if (token) {
-      api.defaults.headers.Authorization = `${token}`
-      setAuthenticated(true)
+      if (token) {
+        api.defaults.headers.Authorization = `${token}`
+        setAuthenticated(true)
+      }
+    } catch (error) {
+      setAuthenticated(false)
     }
   }, [])
 
   async function handleSingIn ({ email, password }: IHandleSingIn) {
-    const { data: token } = await api.post('/login', {
-      email,
-      password
-    })
-
-    localStorage.setItem('token', JSON.stringify(token))
-    api.defaults.headers.Authorization = `Bearer ${token}`
-    setAuthenticated(true)
+    try {
+      const { data: token } = await api.post('/login', {
+        email,
+        password
+      })
+      localStorage.setItem('token', token)
+      api.defaults.headers.Authorization = `Bearer ${token.token}`
+      setAuthenticated(true)
+    } catch (error) {
+      setAuthenticated(false)
+    }
   }
 
   async function handleSignOut () {

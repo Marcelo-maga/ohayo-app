@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-
-import { SmallAddIcon } from '@chakra-ui/icons'
 import { ProjectList } from '../../components/ProjectList'
 import { Modal } from '../../components/UiComponents/Modal'
 import { Containar, Header } from './styles'
 import { CreateNewProject } from '../../components/CreateNewProject'
-// import { Layout } from '../../components/UiComponents/Layout'
 
 export const ProjectsPage: React.FC = () => {
   const [openModal, setModalOpen] = useState(false)
@@ -15,7 +12,7 @@ export const ProjectsPage: React.FC = () => {
         <Header>
           <h1>Dashboard</h1>
           <button onClick={() => setModalOpen(true)} className='btnAdd'>
-            <SmallAddIcon />
+            add
           </button>
         </Header>
 

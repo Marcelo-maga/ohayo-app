@@ -2,7 +2,7 @@
 import React, { } from 'react'
 
 import { Layout, RegisterArea } from './styles'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm, SubmitHandler } from 'react-hook-form'
@@ -21,10 +21,15 @@ const RegisterPage: React.FC = () => {
     resolver: yupResolver(schema)
   })
 
+  const history = useHistory()
   const onSubmit: SubmitHandler<IFormInput> = async ({ email, password }: IFormInput) => {
     api.post('/register', {
       email,
       password
+    }).then((response) => {
+      setTimeout(() => {
+        history.push('/login')
+      }, 1500)
     })
   }
 
@@ -37,10 +42,10 @@ const RegisterPage: React.FC = () => {
           <input type='email' {...register('email')} placeholder='Seu email: ' name='email'/>
           <p>{errors.email?.message}</p>
 
-          <input type='text' {...register('password')} placeholder='Sua senha: ' name='password'/>
+          <input type='password' {...register('password')} placeholder='Sua senha: ' name='password'/>
           <p>{errors.password?.message}</p>
 
-          <input type='text' {...register('passwordConfirm')} placeholder='Sua senha novamente: ' name='passwordConfirm'/>
+          <input type='password' {...register('passwordConfirm')} placeholder='Sua senha novamente: ' name='passwordConfirm'/>
           <p>{errors.passwordConfirm?.message}</p>
 
           <button type='submit'>Sing up</button>

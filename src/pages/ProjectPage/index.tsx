@@ -34,8 +34,6 @@ const ProjectPage: React.FC = () => {
   }, [])
 
   async function completeProjectFunction () {
-    console.log(completeProject)
-
     if (!completeProject) {
       setcompleteProject(true)
       await api.post(`/completeProject/${params.projectId}`, {

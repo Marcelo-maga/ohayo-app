@@ -1,7 +1,7 @@
 import React from 'react'
+import api from '../../services/api'
 import { Container, Content } from './styles'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import api from '../../services/api'
 
 interface IFormInput {
   projectName: string,
@@ -16,7 +16,9 @@ const CreateNewProject: React.FC = () => {
       projectName,
       projectDesc
     }).then(() => {
-      location.reload()
+      setTimeout(() => {
+        location.reload()
+      }, 2500)
     })
   }
 

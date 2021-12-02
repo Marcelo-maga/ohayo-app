@@ -53,8 +53,8 @@ export const Content = styled.div`
     height: 30px;
 
     border-style: solid;
-    border-color: ${colors.purple.lightPurple};
-    border-width: 3px;
+    border-color: white;
+    border-width: 2px;
     border-radius: 50%;
   }
 

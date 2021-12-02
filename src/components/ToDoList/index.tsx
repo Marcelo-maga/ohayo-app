@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { VscAdd } from 'react-icons/vsc'
+import { VscAdd, VscCheck } from 'react-icons/vsc'
 import api from '../../services/api'
 
 import { Container, Card } from './styles'
@@ -32,7 +32,7 @@ const ToDoList: React.FC = () => {
     }
   }
 
-  const [toDoListArray, setToDoList] = useState<ToDoListTypes[]>([])
+  const [toDoListItens, setToDoList] = useState<ToDoListTypes[]>([])
 
   useEffect(() => {
     async function getToDoList () {
@@ -50,9 +50,15 @@ const ToDoList: React.FC = () => {
       })
     }
     getToDoList()
-  }, [onSubimit])
+  }, [onSubimit, completeToDoFunc])
 
   const { register, handleSubmit } = useForm<IFormInput>({})
+
+  async function completeToDoFunc (toDoId: number) {
+    await api.post(`/completeToDo/${projectId}`, {
+      toDoId
+    })
+  }
 
   return (
     <Container>
@@ -64,10 +70,13 @@ const ToDoList: React.FC = () => {
       </form>
 
       <ul>
-        {toDoListArray.map(toDoItens => {
+        {toDoListItens.map(toDoItens => {
           return (
             <Card key={toDoItens.id}>
               <strong>{toDoItens.name}</strong>
+              <button onClick={() => completeToDoFunc(toDoItens.id)} className={'button'} >
+                <VscCheck/>
+              </button>
             </Card>
           )
         })}

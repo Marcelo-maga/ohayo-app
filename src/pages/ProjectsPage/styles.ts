@@ -32,9 +32,9 @@ export const Containar = styled.div`
     margin-top: 30px;
     margin-right: 50px;
 
-    border-width: 3px;
+    border-width: 2px;
     border-style: solid;
-    border-color: ${colors.purple.lightPurple};
+    border-color: white;
 
     width: 40px;
     height: 40px;
@@ -42,7 +42,8 @@ export const Containar = styled.div`
     border-radius: 50%;
 
     svg {
-      color: ${colors.purple.lightPurple}
+      width: 30px;
+      height: 30px;
     }
   }
 

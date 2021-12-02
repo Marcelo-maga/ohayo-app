@@ -14,7 +14,10 @@ function createWindow () {
       nodeIntegration: true
     }
   })
+
+  // Mudar a linha de baixo quando terminar de codar
   mainWindow.setMenu(null)
+
   mainWindow.loadURL(
     isDev ? 'http://localhost:3000' : `file://${path.resolve(__dirname, '..', 'build', 'index.html')}`
   )

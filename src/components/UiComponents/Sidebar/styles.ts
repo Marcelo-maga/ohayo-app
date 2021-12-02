@@ -20,5 +20,10 @@ export const Menu = styled.div`
     width: 100%;
     margin-bottom: 5px;
     margin-left: 15px;
+    
+    svg {
+      width: 19px;
+      height: 19px;
+    }
   }
 `

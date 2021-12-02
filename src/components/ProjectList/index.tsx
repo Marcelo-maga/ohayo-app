@@ -3,9 +3,9 @@ import { VscCheck, VscChromeClose } from 'react-icons/vsc'
 import { useHistory } from 'react-router'
 import api from '../../services/api'
 
-import { Projects } from './styles'
+import { List } from './styles'
 
-interface IProjects {
+type IProjects = {
   id: string,
   name: string,
   desc: string,
@@ -17,37 +17,38 @@ const ProjectList: React.FC = () => {
   const [projects, setProjects] = useState<IProjects[]>([])
 
   useEffect(() => {
-    async function getAllProjects () {
-      await api.get<IProjects[]>('/getAllProjects').then(response => {
+    async function getProjects () {
+      await api.get<IProjects[]>('/getAllProjects').then((response) => {
         setProjects(response.data)
       })
     }
-    getAllProjects()
+    getProjects()
   }, [])
 
   const history = useHistory()
 
   return (
-    <Projects>
-      {!projects
-        ? <strong>Crie seu novo projeto!</strong>
-        : <ul>
-        {projects.map(project => {
-          return (
-            <li key={project.id} onClick={() => history.push({
-              pathname: `${project.id}`
-            })}>
-              <p>{project.name}</p>
-              <p>
-                {(project.timeWorked / 60).toFixed(0) + ' Horas'}
-              </p>
-                {!project.complete ? <VscChromeClose/> : <VscCheck/>}
-            </li>
-          )
-        })}
+    <List>
+      <ul>
+        {
+          !projects
+            ? <h2>Crie seu primeiro projeto!</h2>
+            : projects.map(project => {
+              return (
+              <li key={project.id} onClick={() => history.push({
+                pathname: `${project.id}`
+              })}>
+                <p>{project.name}</p>
+                <p>
+                  {(project.timeWorked / 60).toFixed(0) + ' Horas'}
+                </p>
+                  {!project.complete ? <VscChromeClose/> : <VscCheck/>}
+              </li>
+              )
+            })
+        }
       </ul>
-      }
-    </Projects>
+    </List>
   )
 }
 

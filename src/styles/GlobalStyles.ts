@@ -10,9 +10,10 @@ const GlobalStyles = createGlobalStyle`
       color: white;
     }
   }
-
+  
   html, body, #root {
     height: 100vh;
+    overflow: hidden
   }
 
   *, button, input {
@@ -20,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
     outline: 0;
 
     font-family: 'Ubuntu', sans-serif;
+  }
+
+  button {
+    background-color: transparent;
   }
 
 
